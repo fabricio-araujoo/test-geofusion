@@ -18,9 +18,9 @@
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/fabricio-ap/test-geofusion/issues"
+    "url": "https://github.com/fabricio-araujoo/test-geofusion/issues"
   },
-  "homepage": "https://github.com/fabricio-ap/test-geofusion#readme",
+  "homepage": "https://github.com/fabricio-araujoo/test-geofusion.git#readme",
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.3",
     "babel-jest": "^29.5.0",
