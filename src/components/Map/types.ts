@@ -1,7 +1,7 @@
 export interface MapProps {
-  data: DataType;
-  filter: string;
-  balance: number;
+  data?: DataType;
+  filter?: string;
+  balance?: number;
 }
 
 export type DataType = {

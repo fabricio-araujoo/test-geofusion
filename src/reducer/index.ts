@@ -2,6 +2,8 @@ import { createSlice } from '@reduxjs/toolkit';
 import data from '../assets/data/data.json';
 
 export interface State {
+  mapReady: boolean;
+
   data: {
     name: string;
     city: string;
@@ -10,6 +12,7 @@ export interface State {
     longitude: number;
     revenue: number;
   }[];
+
   filter: {
     search: string;
     balance: number;
@@ -17,7 +20,10 @@ export interface State {
 }
 
 const initialState: State = {
+  mapReady: false,
+
   data: data.stores,
+
   filter: {
     search: '',
     balance: 15000
@@ -28,6 +34,10 @@ export const dataSlice = createSlice({
   name: 'data',
   initialState,
   reducers: {
+    setMapReady(state) {
+      state.mapReady = true;
+    },
+
     changeData: (state, action) => {
       state.data = action.payload;
     },
@@ -40,6 +50,7 @@ export const dataSlice = createSlice({
   }
 });
 
-export const { changeSearch, changeBalance, changeData } = dataSlice.actions;
+export const { setMapReady, changeSearch, changeBalance, changeData } =
+  dataSlice.actions;
 
 export default dataSlice.reducer;

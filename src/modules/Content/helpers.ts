@@ -10,21 +10,25 @@ type DataType = {
 export const filterData = (data: DataType[], search: string) => {
   let newData;
 
-  if (search) newData = searchData(data, search);
+  if (search) {
+    newData = searchData(data, search);
+  }
 
   return {
-    filteredData: sliceArray(newData || data, 10),
+    filteredData: sliceArray(newData || data, 10).length
+      ? sliceArray(newData || data, 10)
+      : [[]],
     markers: newData || data
   };
 };
 
-export const searchData = (data: DataType[], search: string) => {
+const searchData = (data: DataType[], search: string) => {
   return data.filter(({ name }) =>
     name.toLowerCase().includes(search.toLowerCase())
   );
 };
 
-export const sliceArray = (arr: DataType[], quantity: number) => {
+const sliceArray = (arr: DataType[], quantity: number) => {
   return arr.reduce<DataType[][]>((array, item, index) => {
     const chunkIndex = Math.floor(index / quantity);
 

@@ -1,6 +1,6 @@
 import { Provider } from 'react-redux';
 import { ThemeProvider } from 'styled-components';
-import { AppContent } from '../modules/AppContent';
+import { Content } from '../modules/Content';
 import { store } from '../store';
 import { GlobalFonts, GlobalStyle, theme } from '../theme';
 
@@ -10,7 +10,8 @@ const App = () => {
       <ThemeProvider theme={theme}>
         <GlobalStyle />
         <GlobalFonts />
-        <AppContent />
+
+        <Content />
       </ThemeProvider>
     </Provider>
   );
