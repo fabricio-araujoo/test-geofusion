@@ -2,7 +2,7 @@ import maplibregl, { Map } from 'maplibre-gl';
 import { RefObject } from 'react';
 import { IMapSource, IMapSourceFeature } from './types';
 
-const API_KEY = 'nny032iKN6rA7I0BqENm';
+const API_KEY = import.meta.env.VITE_MAP_KEY;
 
 export class MapService {
   private static instance: MapService;
